@@ -148,7 +148,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="datePicker" destination="MDp-eX-TV9" id="Ljq-4N-O5u"/>
+                                    <outlet property="datePicker" destination="MDp-eX-TV9" id="fgT-Cu-XWj"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditNotesCell" rowHeight="216" id="tje-r2-hfR" customClass="NotesCell" customModule="Today" customModuleProvider="target">

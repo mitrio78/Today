@@ -1,5 +1,5 @@
 //
-//  DateCell.swift
+//  EditDateCell.swift
 //  Today
 //
 //  Created by Дмитрий Гришечко on 07.02.2022.
@@ -7,7 +7,13 @@
 
 import UIKit
 
-class DateCell: UITableViewCell {
+class EditDateCell: UITableViewCell {
+    
+    @IBOutlet var datePicker: UIDatePicker!
+    
+    func configure(date: Date) {
+        datePicker.date = date
+    }
     
     
 }

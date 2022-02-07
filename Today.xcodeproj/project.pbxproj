@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B50F25A627B12F2D001C8DE4 /* EditDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F25A527B12F2D001C8DE4 /* EditDateCell.swift */; };
+		B50F25A827B1370A001C8DE4 /* EditDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F25A727B1370A001C8DE4 /* EditDateCell.swift */; };
 		B5A8B63927AD273E001357D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8B63827AD273E001357D5 /* AppDelegate.swift */; };
 		B5A8B63B27AD273E001357D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8B63A27AD273E001357D5 /* SceneDelegate.swift */; };
 		B5A8B64027AD273F001357D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A8B63E27AD273F001357D5 /* Main.storyboard */; };
@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B50F25A527B12F2D001C8DE4 /* EditDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditDateCell.swift; path = ../../EditDateCell.swift; sourceTree = "<group>"; };
+		B50F25A727B1370A001C8DE4 /* EditDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDateCell.swift; sourceTree = "<group>"; };
 		B5A8B63527AD273D001357D5 /* Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Today.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A8B63827AD273E001357D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5A8B63A27AD273E001357D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,8 +93,8 @@
 			children = (
 				B5A8B65227AD3A9D001357D5 /* ReminderListCell.swift */,
 				B5B94DF527B12E2700FD62C7 /* EditTitleCell.swift */,
-				B50F25A527B12F2D001C8DE4 /* EditDateCell.swift */,
 				B5B94DF927B12E7500FD62C7 /* EditNotesCell.swift */,
+				B50F25A727B1370A001C8DE4 /* EditDateCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 				B5A8B63927AD273E001357D5 /* AppDelegate.swift in Sources */,
 				B5A8B65327AD3A9D001357D5 /* ReminderListCell.swift in Sources */,
 				B5A8B64F27AD28EC001357D5 /* Reminder.swift in Sources */,
-				B50F25A627B12F2D001C8DE4 /* EditDateCell.swift in Sources */,
+				B50F25A827B1370A001C8DE4 /* EditDateCell.swift in Sources */,
 				B5B94DF627B12E2700FD62C7 /* EditTitleCell.swift in Sources */,
 				B5A8B65527AD6016001357D5 /* ReminderDetailViewController.swift in Sources */,
 				B5B94DF427B120ED00FD62C7 /* ReminderDetailViewDataSource.swift in Sources */,
