@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B50F25A827B1370A001C8DE4 /* EditDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F25A727B1370A001C8DE4 /* EditDateCell.swift */; };
+		B50F25AA27B13892001C8DE4 /* ReminderDetailEditDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F25A927B13892001C8DE4 /* ReminderDetailEditDataSource.swift */; };
 		B5A8B63927AD273E001357D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8B63827AD273E001357D5 /* AppDelegate.swift */; };
 		B5A8B63B27AD273E001357D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8B63A27AD273E001357D5 /* SceneDelegate.swift */; };
 		B5A8B64027AD273F001357D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A8B63E27AD273F001357D5 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		B50F25A727B1370A001C8DE4 /* EditDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDateCell.swift; sourceTree = "<group>"; };
+		B50F25A927B13892001C8DE4 /* ReminderDetailEditDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailEditDataSource.swift; sourceTree = "<group>"; };
 		B5A8B63527AD273D001357D5 /* Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Today.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A8B63827AD273E001357D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5A8B63A27AD273E001357D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				B5A8B64127AD279A001357D5 /* Assets.xcassets */,
 				B5A8B64327AD279A001357D5 /* LaunchScreen.storyboard */,
 				B5A8B64627AD279A001357D5 /* Info.plist */,
+				B50F25A927B13892001C8DE4 /* ReminderDetailEditDataSource.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				B5A8B63B27AD273E001357D5 /* SceneDelegate.swift in Sources */,
 				B5A8B65727AD89C0001357D5 /* ReminderListDataSource.swift in Sources */,
 				B5B94DFA27B12E7500FD62C7 /* EditNotesCell.swift in Sources */,
+				B50F25AA27B13892001C8DE4 /* ReminderDetailEditDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

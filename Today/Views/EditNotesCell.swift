@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NotesCell: UITableViewCell {
+class EditNotesCell: UITableViewCell {
     
     @IBOutlet var notesTextView: UITextView!
     
