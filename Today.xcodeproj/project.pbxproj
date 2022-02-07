@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50F25A627B12F2D001C8DE4 /* EditDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F25A527B12F2D001C8DE4 /* EditDateCell.swift */; };
 		B5A8B63927AD273E001357D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8B63827AD273E001357D5 /* AppDelegate.swift */; };
 		B5A8B63B27AD273E001357D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8B63A27AD273E001357D5 /* SceneDelegate.swift */; };
-		B5A8B63D27AD273E001357D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8B63C27AD273E001357D5 /* ViewController.swift */; };
 		B5A8B64027AD273F001357D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A8B63E27AD273F001357D5 /* Main.storyboard */; };
 		B5A8B64227AD279A001357D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5A8B64127AD279A001357D5 /* Assets.xcassets */; };
 		B5A8B64527AD279A001357D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A8B64327AD279A001357D5 /* LaunchScreen.storyboard */; };
+		B5A8B64D27AD28D0001357D5 /* ReminderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8B64C27AD28D0001357D5 /* ReminderListViewController.swift */; };
+		B5A8B64F27AD28EC001357D5 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8B64E27AD28EC001357D5 /* Reminder.swift */; };
+		B5A8B65327AD3A9D001357D5 /* ReminderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8B65227AD3A9D001357D5 /* ReminderListCell.swift */; };
+		B5A8B65527AD6016001357D5 /* ReminderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8B65427AD6016001357D5 /* ReminderDetailViewController.swift */; };
+		B5A8B65727AD89C0001357D5 /* ReminderListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8B65627AD89C0001357D5 /* ReminderListDataSource.swift */; };
+		B5B94DF427B120ED00FD62C7 /* ReminderDetailViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B94DF327B120ED00FD62C7 /* ReminderDetailViewDataSource.swift */; };
+		B5B94DF627B12E2700FD62C7 /* EditTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B94DF527B12E2700FD62C7 /* EditTitleCell.swift */; };
+		B5B94DFA27B12E7500FD62C7 /* EditNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B94DF927B12E7500FD62C7 /* EditNotesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B50F25A527B12F2D001C8DE4 /* EditDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditDateCell.swift; path = ../../EditDateCell.swift; sourceTree = "<group>"; };
 		B5A8B63527AD273D001357D5 /* Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Today.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A8B63827AD273E001357D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5A8B63A27AD273E001357D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B5A8B63C27AD273E001357D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B5A8B63F27AD273F001357D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5A8B64127AD279A001357D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5A8B64427AD279A001357D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5A8B64627AD279A001357D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5A8B64C27AD28D0001357D5 /* ReminderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListViewController.swift; sourceTree = "<group>"; };
+		B5A8B64E27AD28EC001357D5 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		B5A8B65227AD3A9D001357D5 /* ReminderListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListCell.swift; sourceTree = "<group>"; };
+		B5A8B65427AD6016001357D5 /* ReminderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailViewController.swift; sourceTree = "<group>"; };
+		B5A8B65627AD89C0001357D5 /* ReminderListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListDataSource.swift; sourceTree = "<group>"; };
+		B5B94DF327B120ED00FD62C7 /* ReminderDetailViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailViewDataSource.swift; sourceTree = "<group>"; };
+		B5B94DF527B12E2700FD62C7 /* EditTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTitleCell.swift; sourceTree = "<group>"; };
+		B5B94DF927B12E7500FD62C7 /* EditNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +74,29 @@
 			children = (
 				B5A8B63827AD273E001357D5 /* AppDelegate.swift */,
 				B5A8B63A27AD273E001357D5 /* SceneDelegate.swift */,
-				B5A8B63C27AD273E001357D5 /* ViewController.swift */,
 				B5A8B63E27AD273F001357D5 /* Main.storyboard */,
+				B5B94DFB27B12EB500FD62C7 /* Views */,
+				B5A8B64E27AD28EC001357D5 /* Reminder.swift */,
+				B5A8B64C27AD28D0001357D5 /* ReminderListViewController.swift */,
+				B5A8B65627AD89C0001357D5 /* ReminderListDataSource.swift */,
+				B5A8B65427AD6016001357D5 /* ReminderDetailViewController.swift */,
+				B5B94DF327B120ED00FD62C7 /* ReminderDetailViewDataSource.swift */,
 				B5A8B64127AD279A001357D5 /* Assets.xcassets */,
 				B5A8B64327AD279A001357D5 /* LaunchScreen.storyboard */,
 				B5A8B64627AD279A001357D5 /* Info.plist */,
 			);
 			path = Today;
+			sourceTree = "<group>";
+		};
+		B5B94DFB27B12EB500FD62C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5A8B65227AD3A9D001357D5 /* ReminderListCell.swift */,
+				B5B94DF527B12E2700FD62C7 /* EditTitleCell.swift */,
+				B50F25A527B12F2D001C8DE4 /* EditDateCell.swift */,
+				B5B94DF927B12E7500FD62C7 /* EditNotesCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +170,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5A8B63D27AD273E001357D5 /* ViewController.swift in Sources */,
 				B5A8B63927AD273E001357D5 /* AppDelegate.swift in Sources */,
+				B5A8B65327AD3A9D001357D5 /* ReminderListCell.swift in Sources */,
+				B5A8B64F27AD28EC001357D5 /* Reminder.swift in Sources */,
+				B50F25A627B12F2D001C8DE4 /* EditDateCell.swift in Sources */,
+				B5B94DF627B12E2700FD62C7 /* EditTitleCell.swift in Sources */,
+				B5A8B65527AD6016001357D5 /* ReminderDetailViewController.swift in Sources */,
+				B5B94DF427B120ED00FD62C7 /* ReminderDetailViewDataSource.swift in Sources */,
+				B5A8B64D27AD28D0001357D5 /* ReminderListViewController.swift in Sources */,
 				B5A8B63B27AD273E001357D5 /* SceneDelegate.swift in Sources */,
+				B5A8B65727AD89C0001357D5 /* ReminderListDataSource.swift in Sources */,
+				B5B94DFA27B12E7500FD62C7 /* EditNotesCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +346,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -334,7 +374,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
