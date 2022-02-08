@@ -10,6 +10,7 @@ import UIKit
 class ReminderDetailViewController: UITableViewController {
     
     var reminder: Reminder?
+    private var tempReminder: Reminder?
     private var dataSource: UITableViewDataSource?
     
     func configure(with reminder: Reminder) {
@@ -30,12 +31,19 @@ class ReminderDetailViewController: UITableViewController {
         }
         if editing {
             dataSource = ReminderDetailEditDataSource(reminder: reminder) { reminder in
+                self.tempReminder = reminder
                 self.editButtonItem.isEnabled = true
             }
             navigationItem.title = NSLocalizedString("Edit Reminder", comment: "edit reminder nav title")
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTrigger))
         } else {
-            dataSource = ReminderDetailViewDataSource(reminder: reminder)
+            if let tempReminder = tempReminder {
+                self.reminder = tempReminder
+                self.tempReminder = nil
+                dataSource = ReminderDetailViewDataSource(reminder: tempReminder)
+            } else {
+                dataSource = ReminderDetailViewDataSource(reminder: reminder)
+            }
             navigationItem.title = NSLocalizedString("View Reminder", comment: "view reminder nav title")
             navigationItem.leftBarButtonItem = nil
             editButtonItem.isEnabled = true

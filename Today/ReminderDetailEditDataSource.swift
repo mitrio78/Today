@@ -13,6 +13,7 @@ class ReminderDetailEditDataSource: NSObject {
     private var reminder: Reminder
     
     private var reminderChangeAction: ReminderChangeAction?
+    
     init(reminder: Reminder, changeAction: @escaping ReminderChangeAction) {
         self.reminder = reminder
         self.reminderChangeAction = changeAction
