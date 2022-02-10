@@ -10,8 +10,7 @@ import UIKit
 class ReminderDetailEditDataSource: NSObject {
     typealias ReminderChangeAction = (Reminder) -> Void
     
-    private var reminder: Reminder
-    
+    var reminder: Reminder
     private var reminderChangeAction: ReminderChangeAction?
     
     init(reminder: Reminder, changeAction: @escaping ReminderChangeAction) {
@@ -41,6 +40,7 @@ class ReminderDetailEditDataSource: NSObject {
             if let titleCell = cell as? EditTitleCell {
                 titleCell.configure(title: reminder.title) { title in
                     self.reminder.title = title
+                    self.reminderChangeAction?(self.reminder)
                 }
             }
         case .dueDate:

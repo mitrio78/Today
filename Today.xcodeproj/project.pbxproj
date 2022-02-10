@@ -83,10 +83,10 @@
 				B5A8B65627AD89C0001357D5 /* ReminderListDataSource.swift */,
 				B5A8B65427AD6016001357D5 /* ReminderDetailViewController.swift */,
 				B5B94DF327B120ED00FD62C7 /* ReminderDetailViewDataSource.swift */,
+				B50F25A927B13892001C8DE4 /* ReminderDetailEditDataSource.swift */,
 				B5A8B64127AD279A001357D5 /* Assets.xcassets */,
 				B5A8B64327AD279A001357D5 /* LaunchScreen.storyboard */,
 				B5A8B64627AD279A001357D5 /* Info.plist */,
-				B50F25A927B13892001C8DE4 /* ReminderDetailEditDataSource.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
