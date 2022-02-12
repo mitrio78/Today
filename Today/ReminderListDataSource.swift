@@ -8,6 +8,8 @@
 import UIKit
 
 class ReminderListDataSource: NSObject {
+    typealias ReminderCompletedAction = (Int) -> Void
+    typealias ReminderDeletedAction = () -> Void
     
     enum Filter: Int {
         case today
@@ -27,6 +29,21 @@ class ReminderListDataSource: NSObject {
         }
     }
     
+    private var reminderCompletedAction: ReminderCompletedAction?
+    private var reminderDeleteAction: ReminderDeletedAction?
+    
+    init(reminderCompletedAction: @escaping ReminderCompletedAction, reminderDeletedAction: @escaping ReminderDeletedAction) {
+        self.reminderDeleteAction = reminderDeletedAction
+        self.reminderCompletedAction = reminderCompletedAction
+        super.init()
+    }
+    
+    var percentComplete: Double {
+        guard filteredReminders.count > 0 else { return 1.0 }
+        let numComplete: Double = filteredReminders.reduce(0) { $0 + ($1.isComplete ? 1 : 0) }
+        return numComplete / Double(filteredReminders.count)
+    }
+    
     var filter: Filter = .today
     
     var filteredReminders: [Reminder] {
@@ -44,7 +61,7 @@ class ReminderListDataSource: NSObject {
     
     func add(_ reminder: Reminder) -> Int? {
         Reminder.testData.insert(reminder, at: 0)
-        return filteredReminders.firstIndex(where: { $0.id == reminder.id })
+        return filteredReminders.firstIndex(where: { $0.id == reminder.id }) 
     }
     
     func delete(at row: Int) {
@@ -77,7 +94,7 @@ extension ReminderListDataSource: UITableViewDataSource {
             var modifiedReminder = currentReminder
             modifiedReminder.isComplete.toggle()
             self.update(modifiedReminder, at: indexPath.row)
-            tableView.reloadRows(at: [indexPath], with: .none)
+            self.reminderCompletedAction?(indexPath.row)
         }
         return cell
     }
@@ -87,12 +104,12 @@ extension ReminderListDataSource: UITableViewDataSource {
             return
         }
         delete(at: indexPath.row)
-        tableView.performBatchUpdates {
+        tableView.performBatchUpdates({
             tableView.deleteRows(at: [indexPath], with: .automatic)
-        } completion: { (_) in
+        }) { (_) in
             tableView.reloadData()
         }
-
+        reminderDeleteAction?()
     }
 }
 
