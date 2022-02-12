@@ -20,7 +20,7 @@ class ReminderListDataSource: NSObject {
             case .today:
                 return isInToday
             case .future:
-                return (date > Date()) && isInToday
+                return (date > Date()) && !isInToday
             case .all:
                 return true
             }
