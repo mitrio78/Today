@@ -23,7 +23,6 @@ class EditNotesCell: UITableViewCell {
         notesTextView.text = notes
         self.notesChangeAction = changeAction
     }
-    
 }
 
 extension EditNotesCell: UITextViewDelegate {

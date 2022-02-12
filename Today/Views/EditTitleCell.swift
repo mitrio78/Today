@@ -8,7 +8,6 @@
 import UIKit
 
 class EditTitleCell: UITableViewCell {
-    
     typealias TitleChangeAction = (String) -> Void
     
     @IBOutlet var titleTextField: UITextField!
@@ -23,10 +22,8 @@ class EditTitleCell: UITableViewCell {
     func configure(title: String, changeAction: @escaping TitleChangeAction) {
         titleTextField.text = title
         self.titleChangeAction = changeAction
-
     }
 }
-
 
 extension EditTitleCell: UITextFieldDelegate {
     
@@ -35,7 +32,6 @@ extension EditTitleCell: UITextFieldDelegate {
             let title = (originalText as NSString).replacingCharacters(in: range, with: string)
             titleChangeAction?(title)
         }
-        
         return true
     }
     
