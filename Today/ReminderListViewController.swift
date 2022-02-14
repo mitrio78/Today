@@ -46,6 +46,7 @@ class ReminderListViewController: UITableViewController {
         progressContainerView.layer.cornerRadius = radius
         progressContainerView.layer.masksToBounds = true
         refreshProgressView()
+        refreshBackground()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,6 +91,7 @@ class ReminderListViewController: UITableViewController {
         reminderListDataSource?.filter = filter
         tableView.reloadData()
         refreshProgressView()
+        refreshBackground()
     }
     
     private func refreshProgressView() {
@@ -102,4 +104,55 @@ class ReminderListViewController: UITableViewController {
             self.progressContainerView.layoutSubviews()
         }
     }
+    
+    private func refreshBackground() {
+        tableView.backgroundView = nil
+        let backgroundView = UIView()
+        if let backgroundColors = filter.backgroungColors {
+            let gradientBackgroundLayer = CAGradientLayer()
+            gradientBackgroundLayer.colors = backgroundColors
+            gradientBackgroundLayer.frame = tableView.frame
+            backgroundView.layer.addSublayer(gradientBackgroundLayer)
+        } else {
+            backgroundView.backgroundColor = filter.substituteBackgroundColor
+        }
+        tableView.backgroundView = backgroundView
+    }
+}
+
+fileprivate extension ReminderListDataSource.Filter {
+    private var gradientBeginColor: UIColor? {
+        switch self {
+        case .today:
+            return UIColor(named: "LIST_GradientTodayBegin")
+        case .future:
+            return UIColor(named: "LIST_GradientFutureBegin")
+        case .all:
+            return UIColor(named: "LIST_GradientAllBegin")
+        }
+        
+    }
+    private var gradientEndColor: UIColor? {
+        switch self {
+        case .today:
+            return UIColor(named: "LIST_GradientTodayEnd")
+        case .future:
+            return UIColor(named: "LIST_GradientFutureEnd")
+        case .all:
+            return UIColor(named: "LIST_GradientAllEnd")
+        }
+    }
+    
+    var backgroungColors: [CGColor]? {
+        guard let beginColor = gradientBeginColor, let endColor = gradientEndColor else {
+            return nil
+        }
+        return [beginColor.cgColor, endColor.cgColor]
+        
+    }
+    
+    var substituteBackgroundColor: UIColor {
+        return gradientBeginColor ?? .tertiarySystemBackground
+    }
+    
 }
