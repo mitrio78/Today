@@ -10,6 +10,43 @@ import UIKit
 class ReminderDetailEditDataSource: NSObject {
     typealias ReminderChangeAction = (Reminder) -> Void
     
+    enum ReminderSection: Int, CaseIterable {
+        case title
+        case dueDate
+        case notes
+        
+        var numRows: Int {
+            switch self {
+            case .title, .notes:
+                return 1
+            case .dueDate:
+                return 2
+            }
+        }
+        
+        var displayText: String {
+            switch self {
+            case .title:
+                return "Title"
+            case .dueDate:
+                return "Date"
+            case .notes:
+                return "Notes"
+            }
+        }
+        
+        func cellIdentifier(for row: Int) -> String {
+            switch self {
+            case .title:
+                return "EditTitleCell"
+            case .dueDate:
+                return row == 0 ? "EditDateLabelCell" : "EditDateCell"
+            case .notes:
+                return "EditNotesCell"
+            }
+        }
+    }
+    
     var reminder: Reminder
     private var reminderChangeAction: ReminderChangeAction?
     
@@ -68,43 +105,7 @@ class ReminderDetailEditDataSource: NSObject {
         return cell
     }
     
-    enum ReminderSection: Int, CaseIterable {
-        case title
-        case dueDate
-        case notes
-        
-        var numRows: Int {
-            switch self {
-            case .title, .notes:
-                return 1
-            case .dueDate:
-                return 2
-            }
-        }
-        
-        var displayText: String {
-            switch self {
-            case .title:
-                return "Title"
-            case .dueDate:
-                return "Date"
-            case .notes:
-                return "Notes"
-            }
-        }
-        
-        func cellIdentifier(for row: Int) -> String {
-            switch self {
-            case .title:
-                return "EditTitleCell"
-            case .dueDate:
-                return row == 0 ? "EditDateLabelCell" : "EditDateCell"
-            case .notes:
-                return "EditNotesCell"
-            }
-        }
-        
-    }
+
 }
 
 extension ReminderDetailEditDataSource: UITableViewDataSource {

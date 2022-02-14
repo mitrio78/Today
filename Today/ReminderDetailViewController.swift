@@ -18,11 +18,11 @@ class ReminderDetailViewController: UITableViewController {
     private var reminderAddAction: ReminderChangeAction?
     private var isNew = false
     
-    func configure(with reminder: Reminder, isNew: Bool = false, addAction: ReminderChangeAction? = nil, changeAction: ReminderChangeAction? = nil) {
+    func configure(with reminder: Reminder, isNew: Bool = false, addAction: ReminderChangeAction? = nil, editAction: ReminderChangeAction? = nil) {
         self.reminder = reminder
         self.isNew = isNew
         self.reminderAddAction = addAction
-        self.reminderEditAction = changeAction
+        self.reminderEditAction = editAction
         if isViewLoaded {
             setEditing(isNew, animated: false)
         }

@@ -61,7 +61,7 @@ class ReminderListDataSource: NSObject {
     
     func add(_ reminder: Reminder) -> Int? {
         Reminder.testData.insert(reminder, at: 0)
-        return filteredReminders.firstIndex(where: { $0.id == reminder.id }) 
+        return filteredReminders.firstIndex(where: { $0.id == reminder.id })
     }
     
     func delete(at row: Int) {

@@ -32,10 +32,10 @@ class ReminderListViewController: UITableViewController {
             guard let reminder = reminderListDataSource?.reminder(at: rowIndex) else {
                 fatalError("Couldn't find data source for reminder list")
             }
-            destination.configure(with: reminder, changeAction: {(reminder) in
+            destination.configure(with: reminder, editAction: {(reminder) in
                 self.reminderListDataSource?.update(reminder, at: rowIndex)
                 self.tableView.reloadData()
-                self.updateProgressView()
+                self.refreshProgressView()
             })
         }
     }
@@ -45,7 +45,7 @@ class ReminderListViewController: UITableViewController {
         let radius = view.bounds.size.width * 0.5 * 0.7
         progressContainerView.layer.cornerRadius = radius
         progressContainerView.layer.masksToBounds = true
-        updateProgressView()
+        refreshProgressView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,9 +60,9 @@ class ReminderListViewController: UITableViewController {
         super.viewDidLoad()
         reminderListDataSource = ReminderListDataSource(reminderCompletedAction: { reminderIndex in
             self.tableView.reloadRows(at: [IndexPath(row: reminderIndex, section: 0)], with: .automatic)
-            self.updateProgressView()
+            self.refreshProgressView()
         }, reminderDeletedAction: {
-            self.updateProgressView()
+            self.refreshProgressView()
         })
         tableView.dataSource = reminderListDataSource
     }
@@ -78,7 +78,8 @@ class ReminderListViewController: UITableViewController {
         detailViewController.configure(with: reminder, isNew: true, addAction: { reminder in
             if let index = self.reminderListDataSource?.add(reminder) {
                 self.tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
-                self.updateProgressView()
+                self.refreshProgressView()
+                self.tableView.reloadData()
             }
         })
         let navigationController = UINavigationController(rootViewController: detailViewController)
@@ -88,10 +89,10 @@ class ReminderListViewController: UITableViewController {
     @IBAction func segmentControlChanged(_ sender: UISegmentedControl) {
         reminderListDataSource?.filter = filter
         tableView.reloadData()
-        updateProgressView()
+        refreshProgressView()
     }
     
-    private func updateProgressView() {
+    private func refreshProgressView() {
         guard let percentComplete = reminderListDataSource?.percentComplete else {
             return
         }
