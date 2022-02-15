@@ -33,9 +33,24 @@ class ReminderListViewController: UITableViewController {
                 fatalError("Couldn't find data source for reminder list")
             }
             destination.configure(with: reminder, editAction: {(reminder) in
-                self.reminderListDataSource?.update(reminder, at: rowIndex)
-                self.tableView.reloadData()
-                self.refreshProgressView()
+                self.reminderListDataSource?.update(reminder, at: rowIndex) { success in
+                    if success {
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                            self.refreshProgressView()
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            let alertTitle = NSLocalizedString("Can't update reminder", comment: "error updating reminder title")
+                            let alertMessage = NSLocalizedString("An error occured while attempting to update reminder", comment: "error updating reminder message")
+                            let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+                            let actionTitle = NSLocalizedString("OK", comment: "ok action title")
+                            alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { _ in
+                                self.dismiss(animated: true, completion: nil)
+                            }))
+                        }
+                    }
+                }
             })
         }
     }
@@ -86,11 +101,15 @@ class ReminderListViewController: UITableViewController {
         let detailViewController: ReminderDetailViewController = storyboard.instantiateViewController(identifier: Self.detailViewControllerIdentifier)
         let reminder = Reminder(id: UUID().uuidString, title: "New Reminder", dueDate: Date())
         detailViewController.configure(with: reminder, isNew: true, addAction: { reminder in
-            if let index = self.reminderListDataSource?.add(reminder) {
-                self.tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
-                self.refreshProgressView()
-                self.tableView.reloadData()
-            }
+            self.reminderListDataSource?.add(reminder, complition: { (index) in
+                if let index = index {
+                    DispatchQueue.main.async {
+                        self.tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+                        self.refreshProgressView()
+                        self.tableView.reloadData()
+                    }
+                }
+            })
         })
         let navigationController = UINavigationController(rootViewController: detailViewController)
         present(navigationController, animated: true, completion: nil)
